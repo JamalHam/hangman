@@ -3,7 +3,6 @@ var anime=["naruto", "bleach", "onepiece", "dragonball", "inuyasha", "hunterxhun
 var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
 
 var answerArray =[];
-
 for(var i = 0; i < answerArray.length; i++){
     answerArray[i] = "_";
 }
@@ -17,8 +16,9 @@ while (leftoverLetters > 0){
     var guess = prompt("Guess a letter or quit");
     
     if(guess === null){
-        break} else if(guess.length==!1){
-            alert("please enter a single letter")
+        break;
+    } else if(guess.length==!1){
+            alert("please enter a single letter");
         }else{
             for( var j = 0; j < hiddenSelection.length; j++){
                 if (hiddenSelection[j] === guess){
@@ -28,5 +28,9 @@ while (leftoverLetters > 0){
             
             }
         }
-    
+ 
 }
+
+   alert(answerArray.join(" "));
+    alert("good job the answer was " + hiddenSelection);
+    
