@@ -7,16 +7,24 @@ body {
     background: url('../images/bgimage.jpg') no-repeat;
     background-size: cover;
 }
-.container { 
+
+.container {
     text-align: center;
-    
 }
-h1,h2,h3,
-h4,h5,h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     padding: 5px;
-    background-color: rgba(101,155,242,.2);
+    background-color: rgba(101, 155, 242, .2);
 }
-#title-image, #gameover-image, #youwin-image{ 
+
+#title-image,
+#gameover-image,
+#youwin-image {
     display: block;
     margin: 0 auto;
 }
@@ -25,9 +33,12 @@ h4,h5,h6 {
     letter-spacing: 10px;
 }
 
-#pressKeyTryAgain, 
-#gameover-image, 
-#youwin-image { display: none;}
+#pressKeyTryAgain,
+#gameover-image,
+#youwin-image {
+    display: none;
+}
+
 .gameplay-column {
     padding-top: 20px;
     border: 3px dashed #fff;

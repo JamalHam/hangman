@@ -9,28 +9,12 @@ for(var i = 0; i < answerArray.length; i++){
 
 var leftoverLetters=hiddenSelection.length;
 
-while (leftoverLetters > 0){
-    
-    alert(answerArray.join(" "));
-    
-    var guess = prompt("Guess a letter or quit");
-    
-    if(guess === null){
-        break;
-    } else if(guess.length==!1){
-            alert("please enter a single letter");
-        }else{
-            for( var j = 0; j < hiddenSelection.length; j++){
-                if (hiddenSelection[j] === guess){
-                    answerArray[j] = guess;
-                    hiddenSelection--;
-                }
-            
-            }
-        }
- 
-}
 
-   alert(answerArray.join(" "));
-    alert("good job the answer was " + hiddenSelection);
-    
+var maxAttempts = 10; // maximum number of attempts
+var guessedLetters = [] //guessed letter empty array
+var currentWord; //index of the current word in the array
+var guessingWord = [] //word that is slowly built by the user as they try to match the array
+var remainingGuesses = 0; //number of guesses left
+var gameStarted = false; //start status
+var gameFinished = false; //end status
+var wins = 0; //Number of wins gained
