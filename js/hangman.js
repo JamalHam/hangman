@@ -1,6 +1,6 @@
 var anime=["naruto", "bleach", "onepiece", "dragonball", "inuyasha", "hunterxhunter", "pokemon", "digimon","monster", "onepunchman", "fairytail", "akira"]
 
-var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
+
 
 var answerArray =[];
 for(var i = 0; i < answerArray.length; i++){
@@ -18,3 +18,10 @@ var remainingGuesses = 0; //number of guesses left
 var gameStarted = false; //start status
 var gameFinished = false; //end status
 var wins = 0; //Number of wins gained
+
+function resetGame(){
+    remainingGuesses = maxAttempts;
+    gameStarted = false;
+    
+    var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
+    }
