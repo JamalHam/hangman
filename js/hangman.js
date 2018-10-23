@@ -24,4 +24,13 @@ function resetGame(){
     gameStarted = false;
     
     var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
+    
+    guessedLetters = [];
+    guessingWord = [];
+    
+    
+    for(var i = 0; i < anime[currentWord].length; i++){
+    guessingWord.push("_");
+}
+    updateDisplay();
     }
