@@ -51,3 +51,29 @@ function updateDisplay{
         gameFinished = true;
     }
 }
+
+document.onkeydown = function(event){
+    if(gameFinished){
+        resetGame();
+        gameFinished = false;
+    }else{
+        if(event.keycode >= 65 && event.keycode =< 90){
+            makeGuess(event.keytoLowerCase());
+        }
+    }
+    
+}
+
+function makeGuess(letter){
+    if(remainingGuesses > 0){
+        if(!gameStarted){
+            gameStarted = true;
+        }
+        if(guessedLetters.indexOf(letter) === -1){
+        guessedLetters.push(letter);
+        evaluateGuess(letter);
+        }
+    }
+    updateDisplay();
+    checkWin();
+};
