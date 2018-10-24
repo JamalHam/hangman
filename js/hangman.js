@@ -46,4 +46,8 @@ function updateDisplay{
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
     
+    if(remainingGuesses <= 0 ){
+        document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
+        gameFinished = true;
+    }
 }
