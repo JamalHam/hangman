@@ -33,4 +33,17 @@ function resetGame(){
     guessingWord.push("_");
 }
     updateDisplay();
+    };
+
+function updateDisplay{
+    document.getElementById("totalWins").innerText = wins;
+    document.getElementById("currentWord").innerText =" ";
+    
+    for(var i = 0; i < guessingWord.length; i++){
+        document.getElementById(currentWord).innerText += guessingWord[i];
     }
+    
+    document.getElementById("remainingGuesses").innerText = remainingGuesses;
+    document.getElementById("guessedLetters").innerText = guessedLetters;
+    
+}
