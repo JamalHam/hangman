@@ -19,16 +19,19 @@ var gameStarted = false; //start status
 var gameFinished = false; //end status
 var wins = 0; //Number of wins gained
 
+//reset game
 function resetGame(){
     remainingGuesses = maxAttempts;
     gameStarted = false;
     
-    var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
     
+//make random word selection    
+    var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
+    //arrays for storing data
     guessedLetters = [];
     guessingWord = [];
     
-    
+    //push spaces for every letter in randomly generated selection
     for(var i = 0; i < anime[currentWord].length; i++){
     guessingWord.push("_");
 }
@@ -58,17 +61,16 @@ document.onkeydown = function(event){
         gameFinished = false;
     }else{
         if(event.keycode >= 65 && event.keycode =< 90){
-            makeGuess(event.keytoLowerCase());
+            makeGuess(event.key.toLowerCase());
         }
     }
-    
 }
 
 function makeGuess(letter){
     if(remainingGuesses > 0){
         if(!gameStarted){
             gameStarted = true;
-        }
+        }//checking letters to see if they have been pushed
         if(guessedLetters.indexOf(letter) === -1){
         guessedLetters.push(letter);
         evaluateGuess(letter);
@@ -77,3 +79,12 @@ function makeGuess(letter){
     updateDisplay();
     checkWin();
 };
+
+function evaluateGuess(letter){
+    var positions = [] //array for storing letter positions
+    
+    for(var i = 0; i < anime[currentWord].length; i++){
+    
+    
+    }
+}
