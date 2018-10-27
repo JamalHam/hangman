@@ -84,7 +84,16 @@ function evaluateGuess(letter){
     var positions = [] //array for storing letter positions
     
     for(var i = 0; i < anime[currentWord].length; i++){
-    
-    
+        if(anime[currentWord[i]] === letter){
+            positions.push(i)
+        }
     }
-}
+    
+    if(positions.length <= 0){
+    remainingGuesses--;
+    } else {
+        for(var i = 0; i < positions.length; i++){
+            anime[positions[i]] = letter;
+        }
+    }
+};
