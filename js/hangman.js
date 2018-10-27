@@ -97,3 +97,11 @@ function evaluateGuess(letter){
         }
     }
 };
+
+function checkWin{
+    if(anime.indexOf("_") === -1){
+        document.getElementById("pressKeyToStartAgain").style.cssText="display: block";
+        wins++;
+        gameFinished = true;
+    }
+}
