@@ -1,40 +1,45 @@
-var anime=["naruto", "bleach", "onepiece", "dragonball", "inuyasha", "hunterxhunter", "pokemon", "digimon", "monster", "onepunchman", "fairytail", "akira"]
+var anime=["naruto", "bleach", "onepiece", "dragonball", "inuyasha", "hunterxhunter", "pokemon", "digimon", "monster", "onepunchman", "fairytail", "akira"];
 
 
-var maxAttempts = 10; // maximum number of attempts
-var guessedLetters = [] //guessed letter empty array
+const maxAttempts = 10; // maximum number of attempts
+var guessedLetters = []; //guessed letter empty array
 var currentWord; //index of the current word in the array
-var guessingWord = [] //word that is slowly built by the user as they try to match the array
+var guessingWord = []; //word that is slowly built by the user as they try to match the array
 var remainingGuesses = 0; //number of guesses left
 var gameStarted = false; //start status
 var gameFinished = false; //end status
 var wins = 0; //Number of wins gained
 
-//reset game
-function resetGame(){
+
+
+// Reset our game-level variables
+function resetGame() {
     remainingGuesses = maxAttempts;
     gameStarted = false;
-    
-    
-//make random word selection    
-    var hiddenSelection = anime[Math.floor(Math.random()*anime.length)];
-    //arrays for storing data
+
+    // Use Math.floor to round the random number down to the nearest whole.
+    currentWordIndex = anime[Math.floor(Math.random() * anime.length)];
+
+    // Clear out arrays
     guessedLetters = [];
     guessingWord = [];
-    
-    //push spaces for every letter in randomly generated selection
-    for(var i = 0; i < anime[currentWord].length; i++){
-    guessingWord.push("_");
-}
+
+    // Build the guessing word and clear it out
+    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+        guessingWord.push("_");
+    }
+
+
+    // Show display
     updateDisplay();
-    };
+};
 
 function updateDisplay{
     document.getElementById("totalWins").innerText = wins;
     document.getElementById("currentWord").innerText =" ";
     
     for(var i = 0; i < guessingWord.length; i++){
-        document.getElementById(currentWord).innerText += guessingWord[i];
+        document.getElementById("currentWord").innerText += guessingWord[i];
     }
     
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
@@ -91,7 +96,7 @@ function evaluateGuess(letter){
 
 function checkWin{
     if(anime.indexOf("_") === -1){
-        document.getElementById("pressKeyToStartAgain").style.cssText="display: block";
+        document.getElementById("pressKeyTryAgain").style.cssText="display: block";
         wins++;
         gameFinished = true;
     }

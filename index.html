@@ -9,14 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/hangman.js"></script>
     <title></title>
-    
 </head>
 
 <body>
     <div>
         <h1>Welcome to classic hangman</h1> </div>
     <div class="col-md-6 gameplay-column">
-        <h2>Press Any Key to Get Started!</h2>
+        <h2 id="pressKeyTryAgain">Press Any Key to Get Started!</h2>
         <h4>Wins</h4>
         <h5 id="totalWins"></h5>
         <h4>Current Word</h4>
@@ -25,14 +24,10 @@
         <h6 id="remainingGuesses"></h6>
         <h4>Letters Guessed</h4>
         <h3 id="guessedLetters"></h3> </div>
+    <script src="js/hangman.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
-
-<script>
-        resetGame();
-        updateDisplay();
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
 </html>
