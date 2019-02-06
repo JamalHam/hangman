@@ -31,9 +31,9 @@ function resetGame() {
     }
 	
 	//hide game over and win images
-	document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
-	document.getElementById("gameover-image").style.cssText = "display: none";
-	document.getElementById("youwin-image").style.cssText = "display: none";
+	document.getElementById("pressKeyTryAgain").style.cssText = "display: none;"
+	document.getElementById("gameover-image").style.cssText = "display: none;"
+	document.getElementById("youwin-image").style.cssText = "display: none;"
 	
     // Show display
     updateDisplay();
@@ -55,8 +55,8 @@ function updateDisplay() {
     document.getElementById("guessedLetters").innerText = guessedLetters;
     
     if(remainingGuesses <= 0){
-		document.getElementById("gameover-image").style.cssText = "display: block";
-        document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
+		document.getElementById("gameover-image").style.cssText = "display: block;"
+        document.getElementById("pressKeyTryAgain").style.cssText = "display: block;"
         hasFinished = true;
     }
 }
@@ -64,21 +64,20 @@ function updateDisplay() {
 
 //update yo man
 function updateHangmanImage() {
-	document.getElementById("hamgmanImage").src = "images/" + (maxtries - remainingGuesses) + ".png"
+	document.getElementById("hangmanImage").src = "assets/images/" + (maxTries - remainingGuesses) + ".png";
 }
 
-document.onkeydown = function(event){
-	//reset if we finish a game
-	if(hasFinished){
-		resetGame();
-		hasFinished = false;
-	}else{
-		//check to make sure a-z clicked
-		if(event.keyCode >= 65 && event.keycode <=90){
-			makeGuess(event.key.toLowerCase());
-		}
-	}
-	
+document.onkeydown = function(event) {
+    // If we finished a game, dump one keystroke and reset.
+    if(hasFinished) {
+        resetGame();
+        hasFinished = false;
+    } else {
+        // Check to make sure a-z was pressed.
+        if(event.keyCode >= 65 && event.keyCode <= 90) {
+            makeGuess(event.key.toLowerCase());
+        }
+    }
 };
 
 ///Guessing Function
@@ -103,12 +102,11 @@ function makeGuess(letter) {
 function evaluateGuess(letter){
 	var positions = [];
 	
-	for(var i = 0; i < SelectableWords[currentWordIndex].length; i++){
-		if(selectableWords[currentWordIndex][i] === letter){
-		positions.push(i);
-		}
-			
-	}
+	for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+        if(selectableWords[currentWordIndex][i] === letter) {
+            positions.push(i);
+        }
+    }
 	if (positions.length <= 0){
 		remainingGuesses--
 		updateHangmanImage();
@@ -121,27 +119,12 @@ function evaluateGuess(letter){
 };
 
 
-function Checkwin(){
+function checkWin(){
 	if(guessingWord.indexOf("_") === -1){
-		document.getElementById("youwin-image").style.cssText = "display: block";
-		document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
+		document.getElementById("youwin-image").style.cssText = "display: block;"
+		document.getElementById("pressKeyTryAgain").style.cssText = "display: block;"
 		winss++;
 		hasFinished = true;
 		
 	}
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
